@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        html, body{
+            margin:0px;
+            background-color: rgba(1, 1, 1, 0.923);
+        }
+        #header, #footer{
+            height:50px;
+            padding-left: 25px;
+        }
+        .flexbox {
+            display: flex;
+            width: 2000px;
+        }
+        .flexbox > div {
+            outline: 1px solid;
+        }
+        .col1 {
+            flex: 1;
+            color: red;
+        }
+        .center {
+            flex: 0 0 1400px;
+            color: rgb(13, 13, 13);
+        }
+        .hoverbox{
+            flex: 1;
+            height: 399px;
+            background:#d6e2da;
+        }
+        .hoverbox:hover{
+            background:#22ab30;
+        }
+        #mywindow{
+            position:absolute;
+            top:15px;
+            left:50px;
+            right:50px;
+            bottom:50px;
+            padding:10px;
+            background-color: rgba(16, 44, 27, 0.899);
+            z-index: 1000;
+            color: rgb(123, 222, 116);
+            font-family: "Verdana", Sans-serif;
+            font-size: 25px;
+            overflow: auto;   
+        }
+
+        .boxText{
+            padding-top:310px;
+            padding-left: 30px;
+            color: rgb(123, 222, 116);
+            font-family: "Verdana", Sans-serif;
+        }
+    </style>
+
+</head>
+
+<body id="main">
+
+    <div class="flexbox">
+        <div id="header" class="col1"></div>
+        <img src="header.png">
+    </div>
+    <div class="flexbox">
+        <div class="col1">Left</div>
+        <div class="center">
+            <div class="flexbox">
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('DuoNewFamily.json')">DuoNewFamily.json
+                    <div class="boxText"><b>DuoNewFamily.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Follow.json')">Follow.json
+                    <div class="boxText"><b>Follow.json</b></div>
+                </div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Identifiers.json')">Identifiers.json
+                    <div class="boxText"><b>Identifiers.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Identity.json')">Identity.json
+                    <div class="boxText"><b>Identity.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Inferences.json')">Inferences.json
+                    <div class="boxText"><b>Inferences.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Marquee.json')">Marquee.json
+                    <div class="boxText"><b>Marquee.json</b></div></div>
+            </div>
+            <div class="flexbox">
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Payments.json')">Payments.json
+                    <div class="boxText"><b>Payments.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Playlist1.json')">Playlist1.json
+                    <div class="boxText"><b>Playlist1.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('PlaylistInABottle.json')">PlaylistInABottle.json
+                    <div class="boxText"><b>PlaylistInABottle.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Read_Me_First.pdf')">Read_Me_First.pdf
+                    <div class="boxText"><b>Read_Me_First.pdf</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('SearchQueries.json')">SearchQueries.json
+                    <div class="boxText"><b>SearchQueries.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('StreamingHistory_music_0.json')">StreamingHistory_music_0.json
+                    <div class="boxText"><b>StreamingHistory_music_0.json</b></div></div>
+            </div>
+            <div class="flexbox">
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('StreamingHistory_podcast_0.json')">StreamingHistory_podcast_0.json
+                    <div class="boxText"><b>StreamingHistory_podcast_0.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Userdata.json')">Userdata.json
+                    <div class="boxText"><b>Userdata.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Wrapped2023.json')">Wrapped2023.json
+                    <div class="boxText"><b>Wrapped2023.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('YourLibrary.json')">YourLibrary.json]
+                    <div class="boxText"><b>YourLibrary.json</b></div></div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Block17')">Block17</div>
+                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Block18')">Block18</div>
+            </div>
+        </div>
+
+        <div class="col1">Right</div>
+
+    </div>
+
+    <div class="flexbox">
+        <div id="header" class="col1">FOOTER</div>
+    </div>
+
+    <script>
+        function win(content){
+            closeme();
+            // Define a style
+            let css = "";
+            let element = document.createElement("div");  
+            grabText(element, content); 
+            element.setAttribute("id", "mywindow");     
+            element.setAttribute("onClick", "closeme()");   
+            element.innerHTML = content;                                                 
+            document.body.appendChild(element);    
+        }
+
+        function closeme(){
+            let window = document.getElementById("mywindow");
+            if(window != null){
+                window.remove();
+            }
+        }
+
+        function grabText(div, filename){
+            fetch(filename)
+                .then(response => response.text())
+                .then((data) => {
+                    let myText = filename; 
+                    myText += data; 
+                    myText += filename; 
+                    myText += "<br />PRIVATE INFORMATION"; 
+                    document.getElementById("mywindow").innerHTML = myText;
+                    //console.log(filename)
+            })
+        }
+
+        //grabText('DuoNewFamily.json'); 
+    </script>
+
+  </body>
+</html>
