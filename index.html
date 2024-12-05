@@ -1,158 +1,268 @@
 <!DOCTYPE html>
 
-<head>
-    <style>
-        html, body{
-            margin:0px;
-            background-color: rgba(1, 1, 1, 0.923);
-        }
-        #header, #footer{
-            height:50px;
-            padding-left: 25px;
-        }
-        .flexbox {
-            display: flex;
-            width: 2000px;
-        }
-        .flexbox > div {
-            outline: 1px solid;
-        }
-        .col1 {
-            flex: 1;
-            color: red;
-        }
-        .center {
-            flex: 0 0 1400px;
-            color: rgb(13, 13, 13);
-        }
-        .hoverbox{
-            flex: 1;
-            height: 399px;
-            background:#d6e2da;
-        }
-        .hoverbox:hover{
-            background:#22ab30;
-        }
-        #mywindow{
-            position:absolute;
-            top:15px;
-            left:50px;
-            right:50px;
-            bottom:50px;
-            padding:10px;
-            background-color: rgba(16, 44, 27, 0.899);
-            z-index: 1000;
-            color: rgb(123, 222, 116);
-            font-family: "Verdana", Sans-serif;
-            font-size: 25px;
-            overflow: auto;   
-        }
+<style>
+    .header img{
+	width:90px;
+	margin-top:20px;
+	margin-bottom: 15px;
+	margin-left: 1050px;
+	}
 
-        .boxText{
-            padding-top:310px;
-            padding-left: 30px;
-            color: rgb(123, 222, 116);
-            font-family: "Verdana", Sans-serif;
-        }
-    </style>
+    html, body{
+    background-color: #343435;    
+    }    
+.mid{
+	margin-left:610px;
+}
 
-</head>
+/*line #2*/
+.divider{
+	margin-top:100px;
+	margin-left:555px;
+	margin-right:555px;
+}
 
-<body id="main">
+/*Facebook login*/
+.btn1{
+	margin-top:30px;
+	width:370px;
+	height:40px;
+	border-width:0px;
+	border-radius:20px;
+	background-color:#0866ff;
+	color:white;
+	font-family: 'Kanit', sans-serif;
+	font-size:13px;
+	background-image:url("facebook.svg");
+	background-repeat:no-repeat;
+	background-position:50px;
+	background-size:25px;
+    margin-left: 300px;
+}
 
-    <div class="flexbox">
-        <div id="header" class="col1"></div>
-        <img src="header.png">
-    </div>
-    <div class="flexbox">
-        <div class="col1">Left</div>
-        <div class="center">
-            <div class="flexbox">
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('DuoNewFamily.json')">DuoNewFamily.json
-                    <div class="boxText"><b>DuoNewFamily.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Follow.json')">Follow.json
-                    <div class="boxText"><b>Follow.json</b></div>
-                </div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Identifiers.json')">Identifiers.json
-                    <div class="boxText"><b>Identifiers.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Identity.json')">Identity.json
-                    <div class="boxText"><b>Identity.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Inferences.json')">Inferences.json
-                    <div class="boxText"><b>Inferences.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Marquee.json')">Marquee.json
-                    <div class="boxText"><b>Marquee.json</b></div></div>
-            </div>
-            <div class="flexbox">
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Payments.json')">Payments.json
-                    <div class="boxText"><b>Payments.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Playlist1.json')">Playlist1.json
-                    <div class="boxText"><b>Playlist1.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('PlaylistInABottle.json')">PlaylistInABottle.json
-                    <div class="boxText"><b>PlaylistInABottle.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Read_Me_First.pdf')">Read_Me_First.pdf
-                    <div class="boxText"><b>Read_Me_First.pdf</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('SearchQueries.json')">SearchQueries.json
-                    <div class="boxText"><b>SearchQueries.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('StreamingHistory_music_0.json')">StreamingHistory_music_0.json
-                    <div class="boxText"><b>StreamingHistory_music_0.json</b></div></div>
-            </div>
-            <div class="flexbox">
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('StreamingHistory_podcast_0.json')">StreamingHistory_podcast_0.json
-                    <div class="boxText"><b>StreamingHistory_podcast_0.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Userdata.json')">Userdata.json
-                    <div class="boxText"><b>Userdata.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Wrapped2023.json')">Wrapped2023.json
-                    <div class="boxText"><b>Wrapped2023.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('YourLibrary.json')">YourLibrary.json]
-                    <div class="boxText"><b>YourLibrary.json</b></div></div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Block17')">Block17</div>
-                <div class="hoverbox" style='background:url("playlisticon.png");' onClick="win('Block18')">Block18</div>
-            </div>
-        </div>
+/*Apple login*/
+.btn2{
+	margin-top:8px;
+	width:370px;
+	height:40px;
+	border-width:0px;
+	border-radius:20px;
+	background-color:black;
+	color:white;
+	font-size:13px;
+	font-family: 'Kanit', sans-serif;
+	background-image:url("apple32.png");
+	background-repeat:no-repeat;
+	background-position:50px;
+	background-size:25px;
+    margin-left: 300px;
+}
 
-        <div class="col1">Right</div>
+/*Google login*/
+.btn3{
+	margin-top:8px;
+	width:370px;
+	height:40px;
+	border-width:1px;
+	border-radius:20px;
+	background-color:white;
+	color:rgb(0, 0, 0);
+	font-family: 'Kanit', sans-serif;
+	font-size:13px;
+	background-image:url("google.png");
+	background-repeat:no-repeat;
+	background-position:50px;
+	background-size:25px;
+    margin-left: 300px;
+}
 
-    </div>
+/*Email and password*/
+.input{
+	margin-top:50px;
+	margin-left:600px;
+}
+fieldset{
+	font-family: 'Kanit', sans-serif;
+	width:370px;
+	height:20px;
+	border-width:0px;
+    margin-left: 295px;
+    color:rgb(255, 255, 255);
+}
 
-    <div class="flexbox">
-        <div id="header" class="col1">FOOTER</div>
-    </div>
+/*Username*/
+#uname{
+	font-family: 'Kanit', sans-serif;
+	width:365px;
+	height:40px;
+	border-radius:5px;
+	border-width:1px;
+	transition-property:transform scale;
+	transition-duration:1s;
+	transition-delay:0.5s;
+}
 
-    <script>
-        function win(content){
-            closeme();
-            // Define a style
-            let css = "";
-            let element = document.createElement("div");  
-            grabText(element, content); 
-            element.setAttribute("id", "mywindow");     
-            element.setAttribute("onClick", "closeme()");   
-            element.innerHTML = content;                                                 
-            document.body.appendChild(element);    
-        }
+#uname:hover{
+	transform:scale(1.2);
+	
+}
 
-        function closeme(){
-            let window = document.getElementById("mywindow");
-            if(window != null){
-                window.remove();
-            }
-        }
+/*password*/
+#upass{
+	font-family: 'Kanit', sans-serif;
+	margin-top:5px;
+	width:365px;
+	height:40px;
+	border-radius:5px;
+	border-width:1px;
+	transition-property:transform scale;
+	transition-duration:1s;
+	transition-delay:0.5s;
+}
 
-        function grabText(div, filename){
-            fetch(filename)
-                .then(response => response.text())
-                .then((data) => {
-                    let myText = filename; 
-                    myText += data; 
-                    myText += filename; 
-                    myText += "<br />PRIVATE INFORMATION"; 
-                    document.getElementById("mywindow").innerHTML = myText;
-                    //console.log(filename)
-            })
-        }
+#upass:hover{
+	transform:scale(1.2);
+}
+a{
+	font-family: 'Kanit', sans-serif;
+	margin-left:305px;
+	color:gray;
+}
+a:hover{
+	text-decoration:none;
+}
 
-        //grabText('DuoNewFamily.json'); 
-    </script>
+/*remember me*/
+.footer{
+	margin-top:50px;
+	margin-left:885px;
+	font-family: 'Kanit', sans-serif;
+    color:#ffffff;
+}
 
-  </body>
+/*login button*/
+.fbtn{
+	float:right;
+	position:absolute;
+	margin-left: 1015px;
+	bottom:570px;
+	/*margin-right:650px;*/
+}
+
+#lgbtn{
+	width:150px;
+	height:45px;
+	border-radius:20px;
+	border-width:1px;
+    background-color:#1ed760
+	
+	
+	/*transition-property:transform-scale;
+	transition-duration:1s;
+	transition-delay:0.5s;*/
+}
+#lgbtn:hover{
+	animation-name:loginbtn;
+	animation-duration:1s;
+	animation-timing-function:ease-in-out;
+	animation-iteration-count:;
+}
+@keyframes loginbtn{
+	from{
+		background-color:#1ed760;
+	}
+	to{
+		background-color:#13863b;
+	}
+}*/
+@keyframes loginbtn:hover{
+	0%{background-color:white;}
+	100%{background-color:#1ed760;}
+    
+}
+
+/*Don't have an account*/
+.crtacc{
+	margin-top:30px;
+	margin-left:980px;
+	font-size:20px;
+	font-family: 'Kanit', sans-serif;
+}
+
+/*Sign up*/
+#signup{
+	margin-top:30px;
+	margin-left:890px;
+	width:400px;
+	height:40px;
+	border-radius:20px;
+	border-width:2px;
+	border-color:black;
+	background-color:#9b9c9b;
+	font-family: 'Kanit', sans-serif;
+}
+</style>
+
+	<head>
+		<title>
+			Spotify|Log-in
+		</title>
+		<!--<link rel="stylesheet" href="assets/css/style.css"/> -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<img src="logo.png"/>
+			<hr>
+		</div>
+		<div class="mid">
+			<input type="submit" value="CONTINUE WITH FACEBOOK " class="btn1" /> 
+		</div>
+		<div class="mid">
+			<input type="submit" value="CONTINUE WITH APPLE" class="btn2"/> 
+		</div>
+		<div class="mid">
+			<input type="submit" value="CONTINUE WITH GOOGLE" class="btn3"/>
+		</div>
+		<!---<hr class="divider">--->
+	<form>
+		<div class="input">
+		<fieldset>
+		<legend>Email address or username</legend>
+			<input type="Email" id="uname" name="username" placeholder="Email address or username"/>
+		</fieldset>
+		</div>
+		
+		<div class="input">
+		<fieldset>
+		<legend>Password</legend>
+			<input type="password" id="upass" name="password" placeholder="Password"/>
+		</fieldset>
+		</div>
+		
+		<div class="input">
+			<a href="#">Forgot Your Password?</a>
+		</div>
+	
+	<div class="footer">
+		<input type="checkbox" id="chckbox" name="rememberme"/>
+		<label for="chckbox">Remember Me</label>
+	</div>
+	<div class="fbtn">
+		<input type="submit" id="lgbtn" name="login" value="LOG IN"/>
+	</div>
+	<hr class="divider">
+	<div class="crtacc">
+		<strong>
+			Don't have an account?
+		</strong>
+	</div>
+	<div>
+		<!---<input type="submit" value="SIGN UP FOR SPOTIFY" onclick="expand()" id="signup" name="createaccount" />--->
+		<button id="signup" onclick="expand()">SIGN UP FOR SPOTIFY</button>
+	</div>
+	</form>
+	<script src="https://kit.fontawesome.com/43732edd53.js" crossorigin="anonymous"></script>
+	</body>
 </html>
